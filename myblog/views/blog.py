@@ -1,4 +1,3 @@
-
 from operator import pos
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
@@ -15,7 +14,7 @@ from myblog import db
 
 blog = Blueprint('blog', __name__)
 
-#Obtner un ususario
+#Obtener un usuario
 def get_user(id):
     user = User.query.get_or_404(id)
     return user

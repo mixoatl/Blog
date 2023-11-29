@@ -42,7 +42,17 @@ body{
     font-weight: 600;
 }
 
-/*Content*/
+p{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*Contenido*/
 .content{
     max-width: 85%;
     margin: 10px auto;
@@ -56,7 +66,7 @@ body{
     padding: 10px 0;
 }
 
-/* Mensaje de Flahs*/
+/* Mensaje de flash*/
 .flash{
     background-color: #0c950c;
     color: #fff;
@@ -105,7 +115,7 @@ form input[type=submit]{
     min-width: 200px;
 }
 
-/* LOGIN*/
+/* Login*/
 .login{
     max-width: 30%;
     margin: 0 auto;

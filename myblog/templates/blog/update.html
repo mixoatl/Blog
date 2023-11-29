@@ -4,11 +4,14 @@
 {% endblock %}
 
 {% block content %}
+    <p>Si deseas actualizar una publicación, puedes modificar el título y/o el contenido que se encuentra en ella</p>
     <form method="POST">
         <label for="title">Título</label>
         <input type="text" name="title" id="title" value="{{ post.title }}" required>
         <label for="body">Contenido</label>
         <textarea name="body" id="body" cols="30" rows="10">{{ post.body }}</textarea>
-        <input type="submit", value="Guardar">
+        <div class="btn">
+            <input type="submit", value="Guardar">
+        </div>
     </form>
 {% endblock %}
