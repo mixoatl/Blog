@@ -18,6 +18,7 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+        user = User(username, generate_password_hash(password), is_admin=False)
 
         user = User(username, generate_password_hash(password))
 
@@ -57,7 +58,11 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user.id
-            return redirect(url_for('blog.index'))
+            session['is_admin'] = user.is_admin
+            if session['is_admin']:
+                return redirect(url_for('auth.admin_dashboard'))
+            else:
+                return redirect(url_for('blog.index'))
         
         flash(error)
         
@@ -85,3 +90,8 @@ def login_required(view):
             return redirect(url_for('auth.login'))
         return view(**kwargs)
     return wrapped_view
+
+@auth.route('/admin_dashboard')
+def admin_dashboard():
+    # Aquí puedes renderizar una plantilla específica para el panel de administrador
+    return render_template('admin_dashboard.html')
