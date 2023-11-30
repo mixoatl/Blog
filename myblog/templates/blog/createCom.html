@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block header %}
+    <h2>{% block title %}Hacer un comentario{% endblock %}</h2>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <label for="comentario">Comentario</label>
+        <textarea name="comentario" id="comentario"  rows="4" style="resize:none;" placeholder="Deja un comentario..."></textarea>
+        <input type="submit", value="Publicar">
+    </form>
+{% endblock %}

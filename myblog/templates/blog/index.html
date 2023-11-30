@@ -28,6 +28,36 @@
         <div>
             <p>{{ post.body }}</p>
         </div>
+        <span>
+            <br>
+            <h5>Comentarios</h5>
+                {% if coments %}
+                <!-- Iterar y mostrar los comentarios -->
+                    {% for coment in coments %}
+                    <article>
+                        <header>
+                            <div>
+                                <div class="about">
+                                    Publicado por {{ get_user(coment.author).username}}
+                                    el {{ coment.created.strftime('%Y-%m-%d') }}
+                                </div> 
+                            </div>
+                        </header>
+                        <div>
+                            <p>{{ coment.body }}</p>
+                        </div>
+                    </article>
+                    <br>
+                    {% endfor %}
+                {% else %}
+                    <h6 style="color: darkgray;">No hay comentarios</h6>
+                {% endif %}
+            <div>
+                {% if g.user %}
+                    <a style="font-size: 15px;" href="{{ url_for('coments.createCom') }}">Comentar...</a>
+                {% endif %}
+            </div>
+        </span>
     </article>
 {% endfor %}
 

@@ -15,5 +15,9 @@ from myblog.views.blog import blog
 app.register_blueprint(blog)
 app.add_url_rule('/', endpoint='index')
 
+from myblog.views.coments import coments
+app.register_blueprint(coments)
+app.add_url_rule('/', endpoint='index')
+
 with app.app_context():
     db.create_all()
