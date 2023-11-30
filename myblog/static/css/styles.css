@@ -68,9 +68,10 @@ p{
 
 /* Mensaje de flash*/
 .flash{
-    background-color: #0c950c;
+    background-color: #4dabe9;
     color: #fff;
     padding: 10px;
+    font-weight: 300;
 }
 
 /*Index - Publicaciones*/

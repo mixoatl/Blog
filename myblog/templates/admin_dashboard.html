@@ -2,10 +2,11 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Panel de Administrador{% endblock %}
+{% block header %}
+    <h2>Bienvenido al Panel de Administrador, {{ g.user.username }}.</h2>
+{% endblock %}
 
 {% block content %}
-    <h2>Bienvenido al Panel de Administrador, {{ g.user.username }}.</h2>
     <p>Aquí puedes realizar acciones administrativas.</p>
 
     <!-- Agrega aquí cualquier contenido específico para el panel de administrador -->

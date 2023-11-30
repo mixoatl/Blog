@@ -14,6 +14,7 @@ def generate_report():
     # Lógica para generar el informe
     total_users = user.User.query.count()
     total_post = post.Post.query.count()
-    flash(f'Reporte generado. Total de usuarios: {total_users}', 'success')
-    flash(f'Reporte generado. Total de post: {total_post}', 'success')
+    flash(f'Reporte generado')
+    flash(f'Total de usuarios: {total_users}')
+    flash(f'Total de post: {total_post}')
     return redirect(url_for('admin.admin_dashboard'))
