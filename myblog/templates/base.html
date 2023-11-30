@@ -21,6 +21,7 @@
                 {% if g.user %}
                 <img src="{{ url_for('static', filename='img/user.png')}}" alt="">
                 <span>{{ g.user.username }}</span>
+                <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
                 {% if g.user.is_admin == 1%}
                     <a href="{{ url_for('auth.admin_dashboard') }}">Panel de Admin</a>
                 {% endif %}
@@ -28,7 +29,6 @@
                 <a href="{{ url_for('auth.register') }}">Regístrate</a>
                 <a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>
                 {% endif %}
-                <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
             </nav>
         </div>
         
