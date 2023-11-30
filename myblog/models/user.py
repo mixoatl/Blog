@@ -7,7 +7,7 @@ class User(db.Model):
     password = db.Column(db.Text)
     is_admin = db.Column(db.Boolean, default=False)
 
-    def __init__(self, username, password) -> None:
+    def __init__(self, username, password, is_admin=False) -> None:
         self.username = username
         self.password = password
         self.is_admin = is_admin
