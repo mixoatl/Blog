@@ -19,9 +19,7 @@ def register():
         username = request.form.get('username')
         password = request.form.get('password')
         user = User(username, generate_password_hash(password), is_admin=False)
-
-        user = User(username, generate_password_hash(password))
-
+        
         error = None
         if not username:
             error = 'Se requiere nombre de usuario'

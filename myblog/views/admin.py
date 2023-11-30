@@ -1,7 +1,7 @@
 from flask import Blueprint, flash, redirect, render_template, url_for
 from myblog.models import user
+from myblog.models import post
 from .auth import auth
-
 
 admin = Blueprint('admin', __name__)
 
@@ -13,5 +13,7 @@ def admin_dashboard():
 def generate_report():
     # Lógica para generar el informe
     total_users = user.User.query.count()
+    total_post = post.Post.query.count()
     flash(f'Reporte generado. Total de usuarios: {total_users}', 'success')
+    flash(f'Reporte generado. Total de post: {total_post}', 'success')
     return redirect(url_for('admin.admin_dashboard'))
